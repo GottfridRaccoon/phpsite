@@ -1,0 +1,26 @@
+body{
+    display: flex;
+}
+.tabledb{
+  margin-left: 5%;  
+ 
+}
+#content {
+   margin-top: 15px; 
+  
+}
+#content-bar{
+    display:none;
+    border-right: 1px solid black;
+   
+}
+header{
+    background-color: blue;
+  height: 5%;
+  width: 100%;
+  position:absolute;
+
+}
+footer{
+    
+}
