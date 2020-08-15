@@ -7,5 +7,5 @@
   </head>
   <body>
     <div id="container">
-  <button id = ""></button>
+  <!-- <button id = ""></button> -->
       <a href="."><img id="logo" src="images/logo.jpg" alt="Widget News" /></a>

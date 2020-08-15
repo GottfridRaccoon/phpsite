@@ -310,3 +310,23 @@ tr:hover {
   border: 1px solid #800;
   color: #fff;
 }
+
+#side-bar{
+  width : 20% ;
+  min-width: 150px; 
+  background-color: white;
+}
+.sdbr{
+  display: flex;
+}
+.sdbr-left{
+   width: 93%;
+}
+.sdbr-right{
+  width :7%; 
+  display:flex; 
+  align-items:center;
+}
+.sdbr-elem{
+  margin:auto;
+}

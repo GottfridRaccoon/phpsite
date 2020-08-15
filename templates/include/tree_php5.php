@@ -1,3 +1,4 @@
+
 <?php 
 /** 
  * PHP5 (ООП)  
@@ -19,6 +20,7 @@ class TreeOX2 {
         //В переменную $_category_arr записываем все категории (см. ниже) 
         $this->_category_arr = $this->_getCategory(); 
     } 
+    
 
     /** 
      * Метод читает из таблицы category все сточки, и  
@@ -45,23 +47,46 @@ class TreeOX2 {
      * @param Integer $parent_id - id-родителя 
      * @param Integer $level - уровень вложености 
      */ 
+       
     public function outTree($parent_id, $level) { 
+       /// echo "<style> #span2:checked + inp{ visibility:visible; }</style>";
+       
         if (isset($this->_category_arr[$parent_id])) { //Если категория с таким parent_id существует 
+        
             foreach ($this->_category_arr[$parent_id] as $value) { //Обходим ее 
                 /** 
-                 * Выводим категорию  
+                 * Выводим категорию 
+                 *  
                  *  $level * 25 - отступ, $level - хранит текущий уровень вложености (0,1,2..) 
-                 */ 
-                echo "<div style=\"margin-left:" . ($level * 25) . "px;\" class = \"treelvl".$value->parent_id."\" id = \"sdlmnt".$value->id."\" >" . $value->name . "</div>"; 
+                 */
+
+                echo "<div  class = 'sdbr'>";
+                 echo "<div  class = 'sdbr sdbr-left'>";
+                  echo " <div style=\"margin-left:" . ($level * 25) . "px;   \" class = \"sdbr-elem treelvl".$value->parent_id."\"
+                    id = \"sdlmnt".$value->id."\" >"  . "<a href=".$value->link.">". $value->name ." 
+                    </div>"; 
+                 echo "</div>";
+                 echo "<div  class = 'sdbr-right' >";
+                  if ($level!=0){
+                    echo "<input type = 'checkbox' class = 'sdbr-elem' for = \"span".$value->id."\" id = \"span".$value->id."\" >";
+                  }
+                 echo "</div>";
+                echo "</div>";
+                //echo "<p>link: ".$value->link."path: ".$value->path."</p>";
+             
                 $level++; //Увеличиваем уровень вложености 
                 //Рекурсивно вызываем этот же метод, но с новым $parent_id и $level 
                 $this->outTree($value->id, $level); 
                 $level--; //Уменьшаем уровень вложености 
             } 
+           
         } 
+        
     } 
-
+   
 } 
 
+echo "<div id ='side-bar'>";
 $tree = new TreeOX2(); 
 $tree->outTree(0, 0); //Выводим дерево 
+echo "</div>";
