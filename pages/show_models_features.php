@@ -19,7 +19,10 @@
     //$sql = "SELECT * FROM `Features` ORDER BY `Feature_name` ASC ";
  $sql1 = "SELECT `Features`.`ID`, `Features`.`Feature_name` FROM `Features`";
     $result1 = $con->query($sql1);
- $sql2 = "SELECT * FROM `View_modelFeatures`";
+ $sql2 = "SELECT `models_features`.`ID`, `models_features`.`Model`, `models_features`.`Feature`, `feature_values`.`Val`
+ FROM `models_features`,`feature_values` 
+ WHERE `models_features`.`Value` = `feature_values`.`ID`";
+ 
     $result2 = $con->query($sql2);
 
     /*while($row = $result->fetch_array(MYSQLI_ASSOC))//mysqli_fetch_array($result)) //$result->fetch_array(MYSQLI_NUM);
