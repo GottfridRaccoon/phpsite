@@ -1,55 +1,24 @@
+<head>
+  <script type = "text/javascript" src ="<?php echo(TEMPLATE_PATH . '/include/index.js')?>"></script>
+</head>
+
 <?php
 	
 	require( TEMPLATE_PATH . "/include/SQL_secure_credentials.php" );
     // Create connection
 
 	
-    $con = new mysqli($server, $username, $password, $database);
-	    
-	mysqli_set_charset ($con, "utf8");
-		mb_internal_encoding("UTF-8");
-
-    // Check connection
-    if (mysqli_connect_errno())
-      {
-          echo "Failed to connect to MySQL: " . mysqli_connect_error();
-      } //;
-        //  exit();
-      //}
-    //$sql = "SELECT * FROM `Features` ORDER BY `Feature_name` ASC ";
- $sql1 = "SELECT `Features`.`ID`, `Features`.`Feature_name` FROM `Features`";
-    $result1 = $con->query($sql1);
- $sql2 = "SELECT `models_features`.`ID`, `models_features`.`Model`, `models_features`.`Feature`, `feature_values`.`Val`
- FROM `models_features`,`feature_values` 
- WHERE `models_features`.`Value` = `feature_values`.`ID`";
- 
-    $result2 = $con->query($sql2);
-
-    /*while($row = $result->fetch_array(MYSQLI_ASSOC))//mysqli_fetch_array($result)) //$result->fetch_array(MYSQLI_NUM);
-      {
-//echo $row
-      //echo $row['FirstName'] . " " . $row['LastName']; //these are the fields that you have stored in your database table employee
-display_data($result);
-      //echo "<br />";
-      } 
-*/
-
-	/* Select queries return a resultset */
-	if ($result1) {
-		printf("Select returned %d rows.\n", $result1->num_rows);
-		display_data($result1);
-
-		/* free result set */
-		$result1->close();
-	}
-	if ($result2) {
-                printf("Select returned %d rows.\n", $result2->num_rows);
-                display_data($result2);
+	echo "<a id='some' href=./pages/generators/gen_models_features.php ></a>";
+	echo "<div id='data_container'> </div>";
+	
+//	if ($result2) {
+     //           printf("Select returned %d rows.\n", $result2->row_count);
+      //          display_data($result2);
 
                 /* free result set */
-                $result2->close();
-        }
-    $con->close();
+      //          $result2->close();
+      //  }
+   // $con->close();
 
 function display_data($data) { $output = '<table>';
 	foreach($data as $key => $var) {
@@ -74,3 +43,4 @@ $output .= '</table>';
 echo $output;
 }
 ?>
+

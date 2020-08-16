@@ -63,7 +63,7 @@ class TreeOX2 {
                 echo "<div  class = 'sdbr'>";
                  echo "<div  class = 'sdbr sdbr-left'>";
                   echo " <div style=\"margin-left:" . ($level * 25) . "px;   \" class = \"sdbr-elem treelvl".$value->parent_id."\"
-                    id = \"sdlmnt".$value->id."\" >"  . "<a href=".$value->link.">". $value->name ." 
+                    id = \"sdlmnt".$value->id."\" >"  . "<a href = ".$value->link.">". $value->name ." 
                     </div>"; 
                  echo "</div>";
                  echo "<div  class = 'sdbr-right' >";
