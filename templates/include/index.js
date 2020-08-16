@@ -10,8 +10,7 @@ let container = document.getElementById("data_container")
 let table = document.createElement("table");
 container.appendChild(table)
 let tr = document.createElement("tr")
-table.appendChild(tr).innerHTML ="Хуй пизда говно собака, с вами Готя забияка"
-table.appendChild(tr).innerHTML ="Хуй пизда говно собака, с вами Готя забияка"
+
 //console.log(href)
 //let a  = JSON.parse(href)//парсинг JSON
 // console.log (a)//сделать поиск по индексу
