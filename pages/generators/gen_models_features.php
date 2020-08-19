@@ -34,10 +34,10 @@ if ($result1) {
     $arr = ["features" => $res1];
 }
 if ($result2) {
-    $arr += ["data" => $res2];
+    $arr += ["models" => $res2];
 }
 if ($result3) {
-    $arr += ["models" => $res3];
+    $arr += ["models_features" => $res3];
 }
 //вывод запросов
 header('Content-type: application/json');
