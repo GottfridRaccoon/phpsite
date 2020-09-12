@@ -11,10 +11,10 @@ mb_internal_encoding("UTF-8");
 // Check connection
 //some code
 $sql1 = "SELECT `Features`.`ID`, `Features`.`Feature_name` FROM `Features`"; // заголовки"столбцов
-$sql2 = "SELECT `ID`, `Model` FROM models"; //нулевой столбец
-$sql3 = "SELECT `models_features`.`ID`, `models_features`.`Model`, `models_features`.`Feature`, `feature_values`.`Val`
- FROM `models_features`,`feature_values`
- WHERE `models_features`.`Value` = `feature_values`.`ID`"; //данные
+$sql2 = "SELECT `ID`, `Model` FROM `Models` ORDER BY `Models`.`Model` ASC"; //нулевой столбец
+$sql3 = "SELECT `Models_Features`.`ID`, `Models_Features`.`Model`, `Models_Features`.`Feature`, `Feature_values`.`Val`
+ FROM `Models_Features`,`Feature_values`
+ WHERE `Models_Features`.`Value` = `Feature_values`.`ID`"; //данные
 
 $result1 = $con->prepare($sql1);
 $result2 = $con->prepare($sql2);

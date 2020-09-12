@@ -20,7 +20,8 @@
       //  }
    // $con->close();
 
-function display_data($data) { $output = '<table>';
+function display_data($data) { 
+	$output = '<table>';
 	foreach($data as $key => $var) {
 		$output .= '<tr>';
 		if ($key === 0) {
@@ -42,5 +43,6 @@ function display_data($data) { $output = '<table>';
 $output .= '</table>';
 echo $output;
 }
+require_once( PAGES_PATH . "/include/export_table.html" );
 ?>
 

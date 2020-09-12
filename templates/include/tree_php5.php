@@ -85,8 +85,11 @@ class TreeOX2 {
     } 
    
 } 
-
+echo '<input type="checkbox" id="onclicked" style ="display:none;">';
+echo '<button id = "open-sidebar" for ="onclicked"> Открыть</button>';
 echo "<div id ='side-bar'>";
 $tree = new TreeOX2(); 
 $tree->outTree(0, 0); //Выводим дерево 
 echo "</div>";
+?>
+<script type = "text/javascript" src ="<?php echo(TEMPLATE_PATH . '/include/tvou.js')?>"></script>

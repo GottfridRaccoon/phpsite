@@ -6,6 +6,8 @@ body {
   background-color: #0072bc;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   line-height: 1.5em;
+  position: relative;
+  z-index: 1;
 }
 
 #container {
@@ -41,13 +43,13 @@ body {
 /* Заголовки */
 
 h1 {
-  color: #eb6841;
+  color: #4190eb;
   margin-bottom: 30px;
   line-height: 1.2em;
 }
 
 h2, h2 a {
-  color: #edc951;
+  color: #51e8ed;
 }
 
 h2 a {
@@ -69,7 +71,7 @@ h2 a {
 
 .pubDate {
   font-size: .8em;
-  color: #eb6841;
+  color: #41eb88;
   text-transform: uppercase;
 }
 
@@ -266,13 +268,13 @@ table, th {
 th {
   border-left: none;
   border-right: none;
-  background: #ef7d50;
+  background: #3071bc;
   color: #fff;
   cursor: default;
 }
 
 tr:nth-child(odd) {
-  background: #fff4cf;
+  background: #cff4ff;
 }
 
 tr:nth-child(even) {
@@ -312,15 +314,20 @@ tr:hover {
 }
 
 #side-bar{
-  width : 20% ;
-  min-width: 150px; 
+  position: absolute;
+  width: 20%;
+  min-width: 150px;
   background-color: white;
+  height: 100%;
+
+ 
 }
 .sdbr{
   display: flex;
 }
 .sdbr-left{
    width: 93%;
+
 }
 .sdbr-right{
   width :7%; 
@@ -329,4 +336,18 @@ tr:hover {
 }
 .sdbr-elem{
   margin:auto;
+ 
 }
+.open-sidebar{
+  position: absolute;
+  z-index: 2;
+}
+
+.sdbr-elem a{
+  text-decoration: none;
+  transition: .4s;
+}
+.sdbr-elem:hover a{
+  padding-left: 10px;
+}
+ 
