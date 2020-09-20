@@ -76,15 +76,37 @@ window.onload = () => {
       }
 
       function settd(obj, prefix, value) {
+        let selected
         let td = document.createElement("td");
         tr.appendChild(td);
         td.setAttribute("value", prefix + "." + obj["ID"]);
-       // td.innerHTML = `${obj[value]}`; //строка таблицы features
-       let input = document.createElement("input")
-       input.setAttribute("name", prefix + "." + obj["ID"]);
-       input.setAttribute("type",'text')
-       input.value = `${obj[value]}`
-       td.appendChild(input)
+        td.innerHTML = `${obj[value]}`; //строка таблицы features
+        
+          
+          
+          td.addEventListener('click', (e)=>{
+            let target = e.target
+             let input = document.createElement("input")
+            //   let i=0
+            let valinp = ""
+              // i=1
+              // }
+           if (target.tagName != 'input'){
+            td.innerHTML =""
+            //  if (i!=1){
+              input.setAttribute("name", prefix + "." + obj["ID"]);
+              input.setAttribute("type",'text')
+              input.value = `${obj[value]}`
+              td.appendChild(input)
+              valinp = input.value
+           }
+         //  else  {
+           
+     //    td.innerHTML= valinp
+        //  input.remove()
+            
+           
+          })
         return td;
       }
 
