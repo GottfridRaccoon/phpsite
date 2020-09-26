@@ -193,12 +193,12 @@ window.onload = () => {
       
       
       
-      tdsearch[i].addEventListener('click', function(){
-        let ran = document.createRange();
-       //   let self = this
-          ran.selectNode(this);
-    document.getSelection().addRange(ran);
-      })
+  //    tdsearch[i].addEventListener('click', function(){
+    //    let ran = document.createRange();
+      
+    //      ran.selectNode(this);
+   // document.getSelection().addRange(ran);
+   //   })
   
          
       

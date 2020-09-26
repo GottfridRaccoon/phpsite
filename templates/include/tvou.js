@@ -12,8 +12,8 @@
      // console.log(side.style.visibility);
      side.hidden = false
     }
-    let a = document.querySelector('#onclicked')
-    a.onclick=()=>console.log(2)
+  //  let a = document.querySelector('#onclicked')
+  //  a.onclick=()=>console.log(2)
   };
   
 
