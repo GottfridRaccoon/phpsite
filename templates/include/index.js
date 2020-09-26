@@ -46,6 +46,9 @@ window.onload = () => {
     }
   }
 
+
+  
+ 
   fetch(href).then(function (response) {
     response.json().then(function (data) {
       let tr;
@@ -55,7 +58,7 @@ window.onload = () => {
       eobj.val = "";
       eobj.colcount = 0;
       eobj.colIndexes = new Object();
-
+    
       //разберись с нодами
 
       let newTr = () => {
@@ -81,34 +84,12 @@ window.onload = () => {
         tr.appendChild(td);
         td.setAttribute("value", prefix + "." + obj["ID"]);
         td.innerHTML = `${obj[value]}`; //строка таблицы features
-        
-          
-          
-          td.addEventListener('click', (e)=>{
-            let target = e.target
-             let input = document.createElement("input")
-            //   let i=0
-            let valinp = ""
-              // i=1
-              // }
-           if (target.tagName != 'input'){
-            td.innerHTML =""
-            //  if (i!=1){
-              input.setAttribute("name", prefix + "." + obj["ID"]);
-              input.setAttribute("type",'text')
-              input.value = `${obj[value]}`
-              td.appendChild(input)
-              valinp = input.value
-           }
-         //  else  {
-           
-     //    td.innerHTML= valinp
-        //  input.remove()
-            
-           
-          })
+        td.setAttribute("name", prefix + "." + obj["ID"]);
+        td.value = `${obj[value]}`
         return td;
       }
+    
+   
 
       if (typeof data != undefined) {
         //функция формирования ячейки таблицы
@@ -191,20 +172,56 @@ window.onload = () => {
         //console.log(eobj);
         //console.log(data);
       }
-      let button = document.createElement("button")
-      button.innerText =`Отправить`
-      table.append(button)
-      button.onclick=()=>{
-        let tablevalue = table.querySelectorAll('input')
-        let obj = {}
-        tablevalue.forEach(e=>{
-         obj[e.getAttribute('name')] = e.value
-        }) 
-        let xhr = new XMLHttpRequest()
-        xhr.open("POST","http://loclhost:8080/show_models_features.php")
-        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8', 'Access-Control-Allow-Origin: *');
-        xhr.send(JSON.stringify(obj));
-       console.log( JSON.stringify(obj))
+    
+     // button.onclick=()=>{
+   //     let tablevalue = table.querySelectorAll('input')
+ //       let obj = {}
+   //     tablevalue.forEach(e=>{
+  //       obj[e.getAttribute('name')] = e.value
+ //       }) 
+ //       let xhr = new XMLHttpRequest()
+ //       xhr.open("POST","http://loclhost:8080/show_models_features.php")
+ //       xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8', 'Access-Control-Allow-Origin: *');
+//        xhr.send(JSON.stringify(obj));
+   //    console.log( JSON.stringify(obj))
+  //    }
+      let tdsearch = document.querySelectorAll('td')
+      
+      
+    for(i = 0 ;i< tdsearch.length; i++){
+
+      
+      
+      
+      tdsearch[i].addEventListener('click', function(){
+        let ran = document.createRange();
+       //   let self = this
+          ran.selectNode(this);
+    document.getSelection().addRange(ran);
+      })
+  
+         
+      
+      
+      tdsearch[i].addEventListener('dblclick', function func (){
+            let input = document.createElement('input')
+          //  input.setAttribute('type','text')
+            input.value = this.innerHTML
+            this.innerHTML = ""
+            this.appendChild(input)
+            input.focus()
+            let self = this
+            input.addEventListener('blur',()=>{
+                    self.innerHTML = input.value
+                    self.addEventListener('dblclick',func)
+
+            })
+            
+          
+            this.removeEventListener('dblclick',func)
+
+           
+          })
       }
     });
   });
