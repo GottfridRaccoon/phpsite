@@ -9,7 +9,7 @@
 
 	
 	echo "<a id='some' href=./pages/generators/gen_models_features.php ></a>";
-	echo "<div id='data_container'> </div>";
+	echo "<div id='data_container' > </div>";
 	
 //	if ($result2) {
      //           printf("Select returned %d rows.\n", $result2->row_count);

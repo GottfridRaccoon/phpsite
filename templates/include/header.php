@@ -26,6 +26,7 @@
   <body>
     <?php
       require CLASS_PATH . "/Engine.php";
+      // header("Access-Control-Allow-Origin: *");
     ?>
     
     <div id="container">

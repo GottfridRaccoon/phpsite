@@ -251,7 +251,9 @@ input[type="submit"]:active {
 /* Таблицы */
 
 table {
+  min-width: 100px;
   width: 100%;
+  margin: auto;
   border-collapse: collapse;
 }
 
@@ -259,6 +261,8 @@ tr, th, td {
   padding: 10px;
   margin: 0;
   text-align: left;
+  height: 10%;
+  min-width: 40px;
 }
 
 table, th {
@@ -271,6 +275,7 @@ th {
   background: #3071bc;
   color: #fff;
   cursor: default;
+
 }
 
 tr:nth-child(odd) {
@@ -319,6 +324,7 @@ tr:hover {
   min-width: 150px;
   background-color: white;
   height: 100%;
+  /* visibility: hidden; */
 
  
 }
@@ -350,4 +356,24 @@ tr:hover {
 .sdbr-elem:hover a{
   padding-left: 10px;
 }
+table .set-value{
+  width: 3rem;
+}
+table .table-value{
+  width: 10px;
+}
+@media screen and (max-width: 900px){
+  table .table-value{
+    width: 5px;
+  }
+  table{
+    width: 0%;
+    padding: 0px;
+  }
+  #container {
+    width: 300px;
+  }
+
+}
+
  
