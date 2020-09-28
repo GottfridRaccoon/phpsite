@@ -3,8 +3,9 @@
 </head>
 
 <?php
-	
-	require( TEMPLATE_PATH . "/include/SQL_secure_credentials.php" );
+
+ini_set("allow_url_fopen", true);
+	require TEMPLATE_PATH . "/include/SQL_secure_credentials.php" ;
     // Create connection
 
 	
@@ -42,7 +43,16 @@ function display_data($data) {
 }
 $output .= '</table>';
 echo $output;
+
+
 }
+
+$json = file_get_contents("php://input");
+$data = json_decode($json,true);
+
+
+print_r($data);
+
 require_once( PAGES_PATH . "/include/export_table.html" );
 ?>
 

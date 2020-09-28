@@ -1,5 +1,5 @@
 <?php
-header("Access-Control-Allow-Origin: *");
+
 $servername = "localhost";
 $username = "root";
 $password = "w1sBGpe5bIKZIrGxJQUV";
@@ -66,6 +66,10 @@ function display_data($data) { $output = '<table>';
 }
 $output .= '</table>';
 echo $output;
-echo  file_get_contents("php://input");
+if ( $_POST['table-value'] != NULL ) {
+    $arr["suc"] = "Успех";
+    echo json_encode($arr);
+    return true;
+}
 }
 ?>

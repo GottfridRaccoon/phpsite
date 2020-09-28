@@ -130,12 +130,13 @@ window.onload = () => {
                   obj[this.getAttribute('name')] = input.value
       //  }) 
               
-               xhr.open("POST","/pages/show_models_features.php")
-               xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8'
+               xhr.open("POST","/pages/show_models_features.php",true)
+               xhr.setRequestHeader('Content-type', 'application/json'
                                 );
                
                 xhr.send(JSON.stringify(obj));
-                console.log( JSON.stringify(obj))
+                
+               
             })
 
             this.removeEventListener('dblclick',func)
